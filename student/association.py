@@ -106,7 +106,7 @@ class Association:
         ############
         # TODO Step 3: return True if measurement lies inside gate, otherwise False
         ############
-        limit = chi2.ppf(0.95, df=20)
+        limit = chi2.ppf(params.gating_threshold, df=params.dim_state)
         if MHD < limit:
             return True
         else:
